@@ -1,0 +1,119 @@
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+$flag-height: 25px;
+$rich-black: #011627;
+$imperial-red: #F02D3A;
+$honeydew: #F0FFF1;
+$title-font: "Source Code Pro";
+$text-font: "Roboto";
+$small-text: 1rem;
+$medium-text: 1.25rem;
+
+html
+{
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+footer
+{
+    background-color: white;
+}
+
+.footer-font
+{
+    color: $rich-black;
+}
+
+h1, h2, h3, h4, .nav-link, .footer-font
+{
+    font-family: $title-font;
+}
+.detailed-img
+{
+    width: 100%;
+}
+
+.navbar-custom, .navbar-toggler, .navbar-brand
+{
+    color: $rich-black;
+}
+
+.navbar-toggler
+{
+    border-color: $rich-black;
+}
+
+p, a, .btn
+{
+    font-family: $text-font;
+    font-size: $small-text;
+}
+
+.btn-danger
+{
+    background: $imperial-red;
+    color: $honeydew;
+}
+
+.carousel, .carousel-inner
+{
+    max-height: 70vh;
+    width: 100vw;
+}
+
+.carousel-content {
+    position: absolute;
+    bottom: 15vh;
+    left: 10%;
+    z-index: 20;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+
+#app
+{
+    background-color: $honeydew;
+}
+
+.navbar-brand img
+{
+    height: 70px;
+    width: 40px;
+}
+
+.flag {
+    height: $flag-height;
+    width: 1.5*$flag-height;
+    border: 1px solid #011627;
+    margin: 0;
+}
+.nav-link
+{
+    font-size: 1.25rem;
+}
+
+#cart-icon, .nav-link, .navbar-brand
+{
+    color: $rich-black;
+}
+#cart-icon, .nutrition
+{
+    height: 1.25rem;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.card-text {
+    height: 3em;
+    overflow-y: hidden;
+}
