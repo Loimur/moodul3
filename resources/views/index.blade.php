@@ -43,15 +43,16 @@
                 </div>
                 <div class="container">
                     <div class="row my-5">
+                        @foreach($burgers as $burger)
                         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                             <div class="card">
                                 <a href="#" title="show">
-                                    <img class="card-img-top" src="/../img/burger.jpg">
+                                    <img class="card-img-top" src="{{ $burger->image_path }}" alt="product image">
                                 </a>
                                 <div class="card-body">
-                                    <h3 class="card-title">Burger</h3>
-                                    <p class="card-text">Väga maitsev burx.</p>
-                                    <h4 class="card-title text-right">10€</h4>
+                                    <h3 class="card-title">{{ $burger->name }}</h3>
+                                    <p class="card-text">{{ $burger->description }}</p>
+                                    <h4 class="card-title text-right">{{ $burger->price }}€</h4>
                                     <div class="row">
                                         <div class="col">
                                             <a class="btn btn-danger my-1 float-right">Osta kohe</a>
@@ -59,23 +60,24 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-6 inline-block">
-                                            <img class="nutrition" src="/../img/gluten-free.svg">
-                                            <img class="nutrition" src="/../img/plant-based.svg">
-                                            <img class="nutrition" src="/../img/vegan.svg">
+                                            @if($burger->is_gf)
+                                            <img class="nutrition" src="./img/gluten-free.svg">
+                                            @elseif($burger->is_vegetarian)
+                                            <img class="nutrition" src="./img/plant-based.svg">
+                                            @elseif($burger->is_vegan)
+                                            <img class="nutrition" src="./img/vegan.svg">
+                                            @endif
                                         </div>
                                         <div class="col-6 inline-block text-right">
-                                            <img class="nutrition" src="/../img/pepper.svg">
-                                            <img class="nutrition" src="/../img/pepper.svg">
-                                            <img class="nutrition" src="/../img/pepper.svg">
-                                            <img class="nutrition" src="/../img/pepper.svg">
-                                            <img class="nutrition" src="/../img/pepper.svg">
-                                        </div>
-                                        <div class="col-6">
+                                            @for($i = 0; $i < $burger->hotness; $i++)
+                                                <img class="nutrition" src="./img/pepper.svg">
+                                            @endfor
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
         </div>

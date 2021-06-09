@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Burger extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'price',
+        'image_path',
+        'description',
+        'is_gf',
+        'is_vegetarian',
+        'is_vegan',
+        'hotness',
+    ];
 }
