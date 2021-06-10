@@ -11,7 +11,7 @@ class BurgerController extends Controller
     public function index()
     {
         $burgers = Burger::all();
-        return view('index', compact('burgers'));
+        return view('burger.index', compact('burgers'));
     }
 
     // show the form for creating a new item
@@ -28,6 +28,7 @@ class BurgerController extends Controller
             'price' => 'required',
             'image' => 'required|image|mimes:jpeg,jpg,png,jpg,gif,svg|max:2048',
             'description' => 'required',
+            'ingredients' => 'required',
             'is_gf' => 'required',
             'is_vegetarian' => 'required',
             'is_vegan' => 'required',
@@ -40,6 +41,7 @@ class BurgerController extends Controller
             $burger->name = $data['name'];
             $burger->price = $data['price'];
             $burger->description = $data['description'];
+            $burger->ingredients = $data['ingredients'];
             $burger->is_gf = $data['is_gf'];
             $burger->is_vegetarian = $data['is_vegetarian'];
             $burger->is_vegan = $data['is_vegan'];
@@ -61,6 +63,7 @@ class BurgerController extends Controller
             'price' => 'required',
             'image' => 'required|image|mimes:jpeg,jpg,png,jpg,gif,svg|max:2048',
             'description' => 'required',
+            'ingredients' => 'required',
             'is_gf' => 'required',
             'is_vegetarian' => 'required',
             'is_vegan' => 'required',
@@ -82,6 +85,7 @@ class BurgerController extends Controller
                 $burger->name = $data['name'],
                 $burger->price = $data['price'],
                 $burger->description = $data['description'],
+                $burger->ingredients = $data['ingredients'],
                 $burger->is_gf = $data['is_gf'],
                 $burger->is_vegetarian = $data['is_vegetarian'],
                 $burger->is_vegan = $data['is_vegan'],

@@ -11405,7 +11405,7 @@ footer {
   color: #011627;
 }
 
-h1, h2, h3, h4, .nav-link, .footer-font {
+h1, h2, h3, h4, .nav-link, .footer-font, .card-header {
   font-family: "Source Code Pro";
 }
 
@@ -11421,8 +11421,9 @@ h1, h2, h3, h4, .nav-link, .footer-font {
   border-color: #011627;
 }
 
-p, a, .btn {
-  font-family: "Roboto";
+p, a, .btn, label, input, form, .form-control, #email, input:-webkit-autofill::first-line,
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+  font-family: "Roboto" sans-serif !important;
   font-size: 1rem;
 }
 
@@ -11483,4 +11484,8 @@ p, a, .btn {
 .card-text {
   height: 3em;
   overflow-y: hidden;
+}
+
+.card-title {
+  height: 3em;
 }

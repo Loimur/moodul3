@@ -13,6 +13,7 @@ class Burger extends Model
         'price',
         'image_path',
         'description',
+        'ingredients',
         'is_gf',
         'is_vegetarian',
         'is_vegan',

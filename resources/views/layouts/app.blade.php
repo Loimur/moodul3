@@ -48,14 +48,14 @@
                             <a class="nav-link" href="#">Meist</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Menüü</a>
+                            <a class="nav-link" href="#menu">Menüü</a>
                         </li>
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Logi sisse</a>
+                            <a class="nav-link" href="{{ route('login') }}">Logi sisse</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Registreeri</a>
+                            <a class="nav-link" href="{{ route('register') }}">Registreeri</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="bi bi-cart4"></i></a>

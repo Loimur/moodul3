@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [\App\Http\Controllers\BurgerController::class, 'index'])->name('index');
 
 Route::middleware(['auth', 'is.admin'])->group(function () {
     Route::get('/burger/create', [\App\Http\Controllers\BurgerController::class, 'create'])->
@@ -33,7 +31,7 @@ Route::middleware(['auth', 'is.admin'])->group(function () {
     name('admin');
 });
 
-Route::get('/burger', [\App\Http\Controllers\BurgerController::class, 'index'])->name('index');
+Route::get('/', [\App\Http\Controllers\BurgerController::class, 'index'])->name('burger.index');
 Route::get('/burger/{id}', [\App\Http\Controllers\BurgerController::class, 'show'])->name('burger.show');
 
 Auth::routes();
