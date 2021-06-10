@@ -43,7 +43,7 @@ class BurgerController extends Controller
             if(array_key_exists('is_gf', $data)) {$burger->is_vegetarian = true;}
             if(array_key_exists('is_vegan', $data)) {$burger->is_vegan = true;}
             $burger->hotness = $data['hotness'];
-            $burger->image_path = './img/'.$imageName;
+            $burger->image_path = '/../img/'.$imageName;
             $burger->save();
             $request->image->move(public_path('img'), $imageName);
             return redirect()->route('admin')->with('status',"Andmed edukalt sisestatud.");

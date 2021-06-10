@@ -17,8 +17,8 @@ $medium-text: 1.25rem;
 html
 {
     font-size: 16px;
-    overflow-x: hidden;
     font-family: $text-font;
+    max-width: 100%;
 }
 
 footer
@@ -64,10 +64,16 @@ input:-webkit-autofill:active, tr, th, td
     color: $honeydew;
 }
 
-.carousel, .carousel-inner
+.carousel, .carousel-inner, .carousel-indicators
 {
     max-height: 70vh;
-    width: 100vw;
+    max-width: 100%;
+}
+
+ul
+{
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 .carousel-content {

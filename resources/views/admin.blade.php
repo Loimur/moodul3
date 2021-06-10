@@ -13,6 +13,7 @@
         @endif
         @auth
             <a class="btn btn-success my-4" href="{{ route('burger.create') }}">Lisa uus</a>
+            <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                 <tr>
@@ -20,8 +21,8 @@
                     <th scope="col">Nimi</th>
                     <th scope="col">Hind</th>
                     <th scope="col">GV</th>
-                    <th scope="col">Taimetoit</th>
-                    <th scope="col">Vegan</th>
+                    <th scope="col">TT</th>
+                    <th scope="col">VG</th>
                     <th scope="col">Tegevused</th>
                 </tr>
                 </thead>
@@ -29,7 +30,7 @@
                 @foreach($burgers as $burger)
                     <tr>
                         <th scope="row">{{$burger->id}}</th>
-                        <td>{{ $burger->name }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($burger->name, 20, '..') }}</td>
                         <td>{{ $burger->price }}</td>
                         @if($burger->is_gf)
                             <td>jah</td>
@@ -68,6 +69,7 @@
                 @endforeach
                 </tbody>
             </table>
+            </div>
     </div>
     @endauth
 @endsection

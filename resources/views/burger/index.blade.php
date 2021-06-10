@@ -61,10 +61,10 @@
                             <div class="row">
                                 <div class="col-6 inline-block">
                                     @if($burger->is_gf)
-                                        <img class="nutrition" data-toggle="tooltip" title="Gluten free" src="./img/gluten-free.svg">
+                                        <img class="nutrition" data-toggle="tooltip" title="Gluteenivaba" src="./img/gluten-free.svg">
                                     @endif
                                     @if($burger->is_vegetarian)
-                                            <img class="nutrition" data-toggle="tooltip" title="Vegetarian" src="./img/plant-based.svg">
+                                            <img class="nutrition" data-toggle="tooltip" title="Taimetoit" src="./img/plant-based.svg">
                                         @endif
                                     @if($burger->is_vegan)
                                             <img class="nutrition" data-toggle="tooltip" title="Vegan"  src="./img/vegan.svg">
