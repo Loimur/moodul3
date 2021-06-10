@@ -48,7 +48,7 @@
                             <a class="nav-link" href="#">Meist</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#menu">Menüü</a>
+                            <a class="nav-link" href="{{ route('burger.index') }}#menu">Menüü</a>
                         </li>
                         <!-- Authentication Links -->
                         @guest

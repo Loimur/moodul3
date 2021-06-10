@@ -20,9 +20,9 @@ class CreateBurgersTable extends Migration
             $table->string('image_path');
             $table->string('description');
             $table->string('ingredients');
-            $table->boolean('is_gf');
-            $table->boolean('is_vegetarian');
-            $table->boolean('is_vegan');
+            $table->boolean('is_gf')->default(false);
+            $table->boolean('is_vegetarian')->default(false);
+            $table->boolean('is_vegan')->default(false);
             $table->tinyInteger('hotness');
             $table->timestamps();
         });
