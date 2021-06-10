@@ -36,7 +36,7 @@
                 <div class="col-12">
                     <div class="form-group">
                         <strong>Hind:</strong>
-                        <input type="number" class="form-control" name="price" placeholder="Hind" max="255">
+                        <input type="number" class="form-control" name="price" placeholder="Hind" max="127">
                     </div>
                 </div>
                 <div class="col-12">
@@ -48,7 +48,7 @@
                 <div class="col-12">
                     <div class="form-group">
                         <strong>Koostisosad:</strong>
-                        <input type="text" class="form-control" name="ingredients" placeholder="Koostisosad" max="255">
+                        <input type="text" class="form-control" name="ingredients" placeholder="Koostisosad" max="127">
                     </div>
                 </div>
                 <div class="col-12">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <button type="submit" name="submit" class="btn btn-primary" value="Submit">Sisesta</button>
+                    <button type="submit" name="submit" class="btn btn-primary" value="Submit"><span>Sisesta</span></button>
                 </div>
             </div>
 

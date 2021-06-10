@@ -17,6 +17,6 @@ class Burger extends Model
         'is_gf',
         'is_vegetarian',
         'is_vegan',
-        'hotness',
+        'hotness'
     ];
 }

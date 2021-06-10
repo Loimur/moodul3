@@ -17,6 +17,8 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Rubik:wght@500&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -77,7 +79,7 @@
                                             <a class="dropdown-item" href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
+                                                {{ __('Logi välja') }}
                                             </a>
 
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -97,7 +99,7 @@
         <main class="py-4">
             @yield('content')
         </main>
-
+        <button onclick="topFunction()" id="back-to-top" class="btn" title="Go to top"><i class="bi bi-arrow-up-short"></i></button>
         <footer>
             <div class="container">
                 <div class="row py-3">

@@ -12,13 +12,13 @@
         <!-- The slideshow -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="./img/carousel1.jpg" alt="Burger">
+                <img class="carousel-image img-fluid" src="./img/carousel1.jpg" alt="Burger">
             </div>
             <div class="carousel-item">
-                <img src="./img/carousel2.jpg" alt="Burger">
+                <img class="carousel-image img-fluid" src="./img/carousel2.jpg" alt="Burger">
             </div>
             <div class="carousel-item">
-                <img src="./img/carousel3.jpg" alt="Burger">
+                <img class="carousel-image img-fluid" src="./img/carousel3.jpg" alt="Burger">
             </div>
         </div>
 
@@ -36,7 +36,7 @@
                     <p>
                         Parimad burgerid Eestis!
                     </p>
-                    <a class="btn btn-danger">Vaata menüüd</a>
+                    <a class="btn btn-danger" href="#menu"><span>Vaata menüüd</span></a>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
     <div class="container" id="menu" name="menu">
         <div class="row my-5">
             @foreach($burgers as $burger)
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-3">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 my-3">
                     <div class="card">
                         <a href="{{ route('burger.show', $burger->id) }}">
                             <img class="card-img-top" src="{{ $burger->image_path }}" alt="product image">
@@ -53,9 +53,9 @@
                             <h3 class="card-title">{{ $burger->name }}</h3>
                             <p class="card-text">{{ $burger->description }}</p>
                             <h4 class="card-subtitle text-right">{{ $burger->price }}€</h4>
-                            <div class="row">
+                            <div class="row py-2">
                                 <div class="col">
-                                    <a class="btn btn-danger my-1 float-right">Osta kohe</a>
+                                    <a class="btn btn-danger my-1 float-right"><span>Osta kohe</span></a>
                                 </div>
                             </div>
                             <div class="row">

@@ -10,7 +10,7 @@
         </div>
 
         <div class="row py-5">
-            <div class="col-12 col-md-6 order-sm-1 order-md-0">
+            <div class="col-12 col-md-6 order-1 order-md-0">
                 <div class="row py-2">
                     <div class="col-12 col-md-6">
                         <h2>{{ $burger[0]->name }}</h2>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 order-sm-0 order-md-1">
+            <div class="col-12 col-md-6 order-0 order-md-1">
                 <img class="detailed-img py-2" src="{{ $burger[0]->image_path }}" alt="burger">
             </div>
         </div>

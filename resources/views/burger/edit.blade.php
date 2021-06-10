@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <button type="submit" name="submit" class="btn btn-success" value="Submit">Muuda</button>
+                    <button type="submit" name="submit" class="btn btn-success" value="Submit"><span>Muuda</span></button>
                 </div>
             </div>
 

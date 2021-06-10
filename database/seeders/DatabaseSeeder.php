@@ -16,6 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UserSeeder::class);
-        Burger::factory()->count(10)->create();
+        $this->call(BurgerSeeder::class);
     }
 }

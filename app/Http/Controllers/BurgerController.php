@@ -69,7 +69,7 @@ class BurgerController extends Controller
             //delete previous image
             $burger = Burger::where('id', $id)->get();
             $imagePath = base_path().'/public/'.$burger[0]->image_path;
-            $imagePath = str_replace('./', '', $imagePath);
+            $imagePath = str_replace('/../', '', $imagePath);
             $imagePath = str_replace('/', '\\', $imagePath);
             if (file_exists($imagePath)) {
                 unlink($imagePath);

@@ -21,6 +21,6 @@ class IsAdmin
             return $next($request);
         }
 
-        return redirect()->route('index'); // if user is not an admin.
+        return redirect()->route('burger.index'); // if user is not an admin.
     }
 }
