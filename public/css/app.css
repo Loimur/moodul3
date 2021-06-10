@@ -11395,6 +11395,7 @@ h3 {
 html {
   font-size: 16px;
   overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
 }
 
 footer {
@@ -11422,8 +11423,9 @@ h1, h2, h3, h4, .nav-link, .footer-font, .card-header {
 }
 
 p, a, .btn, label, input, form, .form-control, #email, input:-webkit-autofill::first-line,
-input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
-  font-family: "Roboto" sans-serif !important;
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus,
+input:-webkit-autofill:active, tr, th, td {
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
 }
 

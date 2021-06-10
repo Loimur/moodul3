@@ -29,9 +29,6 @@ class BurgerController extends Controller
             'image' => 'required|image|mimes:jpeg,jpg,png,jpg,gif,svg|max:2048',
             'description' => 'required',
             'ingredients' => 'required',
-            'is_gf' => 'required',
-            'is_vegetarian' => 'required',
-            'is_vegan' => 'required',
             'hotness' => 'required',
         ]);
         $data = $request->input();
@@ -42,17 +39,17 @@ class BurgerController extends Controller
             $burger->price = $data['price'];
             $burger->description = $data['description'];
             $burger->ingredients = $data['ingredients'];
-            $burger->is_gf = $data['is_gf'];
-            $burger->is_vegetarian = $data['is_vegetarian'];
-            $burger->is_vegan = $data['is_vegan'];
+            if(array_key_exists('is_gf', $data)) {$burger->is_gf = true;}
+            if(array_key_exists('is_gf', $data)) {$burger->is_vegetarian = true;}
+            if(array_key_exists('is_vegan', $data)) {$burger->is_vegan = true;}
             $burger->hotness = $data['hotness'];
             $burger->image_path = './img/'.$imageName;
             $burger->save();
             $request->image->move(public_path('img'), $imageName);
-            return redirect()->route('admin')->with('status',"Insert successful.");
+            return redirect()->route('admin')->with('status',"Andmed edukalt sisestatud.");
         }
         catch(Exception $e){
-            return redirect()->route('admin')->with('failed',"Operation failed.");
+            return redirect()->route('admin')->with('failed',"Sisestamine ebaõnnestus.");
         }
     }
 
@@ -64,9 +61,6 @@ class BurgerController extends Controller
             'image' => 'required|image|mimes:jpeg,jpg,png,jpg,gif,svg|max:2048',
             'description' => 'required',
             'ingredients' => 'required',
-            'is_gf' => 'required',
-            'is_vegetarian' => 'required',
-            'is_vegan' => 'required',
             'hotness' => 'required',
         ]);
         $data = $request->input();
@@ -81,23 +75,26 @@ class BurgerController extends Controller
                 unlink($imagePath);
             }
             //add new info to db
+            (array_key_exists('is_gf', $data)) ? $data['is_gf'] = true : $data['is_gf'] = false;
+            (array_key_exists('is_vegetarian', $data)) ? $data['is_vegetarian'] = true : $data['is_vegetarian'] = false;
+            (array_key_exists('is_vegan', $data)) ? $data['is_vegan'] = true : $data['is_vegan'] = false;
             Burger::where('id', $id)->update(array(
-                $burger->name = $data['name'],
-                $burger->price = $data['price'],
-                $burger->description = $data['description'],
-                $burger->ingredients = $data['ingredients'],
-                $burger->is_gf = $data['is_gf'],
-                $burger->is_vegetarian = $data['is_vegetarian'],
-                $burger->is_vegan = $data['is_vegan'],
-                $burger->hotness = $data['hotness'],
-                $burger->image_path = './img/'.$imageName
+                'name' => $data['name'],
+                'price' => $data['price'],
+                'description' => $data['description'],
+                'ingredients' => $data['ingredients'],
+                'is_gf' => $data['is_gf'],
+                'is_vegetarian' => $data['is_vegetarian'],
+                'is_vegan' => $data['is_vegan'],
+                'hotness' => $data['hotness'],
+                'image_path' => '/../img/'.$imageName
             ));
             //add new image to public folder
             $request->image->move(public_path('img'), $imageName);
-            return redirect()->route('admin')->with('status',"Edit successful.");
+            return redirect()->route('admin')->with('status',"Andmed edukalt muudetud.");
         }
         catch(Exception $e){
-            return redirect()->route('admin')->with('failed',"Operation failed.");
+            return redirect()->route('admin')->with('failed',"Andmete muutmine ebaõnnestus.");
         }
     }
 
@@ -112,7 +109,7 @@ class BurgerController extends Controller
         }
         Burger::where('id', $id)->delete();
         return redirect()->back()
-            ->with('status', 'Item deleted successfully.');
+            ->with('status', 'Toode edukalt kustutatud.');
     }
 
     public function show($id)
